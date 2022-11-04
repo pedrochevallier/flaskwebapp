@@ -62,8 +62,13 @@ def sign_up():
             flash('Password must have at least 7 characters', 'error')
         else:
             # place the user on pending approval from admin
-            user = Pendings(email=email, first_name=first_name, password=generate_password_hash(password1, method='sha256'))
-            db.session.add(user)
+            users = User.query.all()
+            if not users:
+                user = User(email=email, first_name=first_name, password=generate_password_hash(password1, method='sha256'))
+                db.session.add(user)
+            else:
+                user = Pendings(email=email, first_name=first_name, password=generate_password_hash(password1, method='sha256'))
+                db.session.add(user)
             db.session.commit()
             return render_template("pending.html")
 
