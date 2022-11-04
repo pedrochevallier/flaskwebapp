@@ -1,0 +1,39 @@
+.main-body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .unathorized {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "nav"
+            "unathorized"
+            "footer";
+        background-color: white;
+        color: black;
+        justify-items: center;
+        align-items: center;
+        align-content: center;
+
+        .unatho {
+            grid-area: unathorized;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            button{
+                margin-top: 15px;
+                border: none;
+                background-color: white;
+                color: white;
+                a{
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+        }
+
+    }
+
+}

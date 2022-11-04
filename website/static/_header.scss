@@ -1,0 +1,53 @@
+.navi{
+    grid-area: nav;
+    background-color: #031926;
+    height: 60px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a{
+        margin-left: 50px;
+        img{
+            padding-top: 3px;
+            height: 50px;
+            width: auto;
+            padding-left: 10px;
+        }
+    }
+    div{
+        ul{
+            margin-right: 50px;
+            padding-right: 10px;
+            align-content: center;
+            margin-bottom: 0rem;
+            list-style-type: none;
+            li{
+                align-items: center;
+                align-content: center;
+            }
+        }
+    }
+}
+
+@mixin colors($fondo, $color){
+    background-color: $fondo;
+    color: $color;
+}
+
+.nav-button{
+    text-decoration: none;
+    @include colors(#031926, #f0f8ff);
+    padding: 5px;
+    border-radius: 3px;
+    &:hover{
+        @include colors(#f0f8ff, #031926)
+    }
+}
+
+.current-button{
+    @extend .nav-button;
+    @include colors(#f0f8ff, #031926)
+}
+
+

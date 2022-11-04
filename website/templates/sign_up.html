@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+
+    <link rel="stylesheet" href="../static/main.css">
+    <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+
+</head>
+
+<body class="main-body">
+    <header class="navi">
+        <a href="/"><img class="nav-img" src="#" alt=""></a>
+        <div>
+            <ul>
+                <li>
+                    <a class="nav-button" href="/">Home</a>
+                    <a class="nav-button" href="/login">Log In</a>
+                </li>
+            </ul>
+        </div>
+
+    </header>
+
+    <main class="login">
+        <div class="centered">
+            <form method="POST">
+                <h1 align-item="center">Register</h1>
+                <p>Email</p>
+                <input type="email" id="email" name="email" required>
+                <p>Name</p>
+                <input type="text" id="firstName" name="firstName" required>
+                <p>Password</p>
+                <input type="password" id="password1" name="password1" minlength="8" required>
+                <p>Confirm password</p>
+                <input type="password" id="password2" name="password2" required>
+                <button type="submit">Register</button>
+            </form>
+            <div>
+                <p>Already have an account? <a class="register" href="/login">Log In</a></p>
+
+            </div>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for categories, message in messages %}
+            <div class="{{ categories }}">
+                {{ message }}
+                <button class="closebtn">
+                    <i class="close icon" onclick=delete_flash(this)>x</i>
+                </button>
+            </div>
+            {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <a class="footer-button" href="#">
+            <p></p>
+        </a>
+    </footer>
+
+    <script>
+        function delete_flash(flash) {
+            $(flash).parent().parent().remove()
+        }
+    </script>
+</body>
+
+</html>

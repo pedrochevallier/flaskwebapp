@@ -1,0 +1,128 @@
+.main-body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    .item {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "nav nav nav"
+            "form table table"
+            "footer footer footer";
+        justify-items: center;
+        align-items: start;
+        align-content: center;
+
+        .form {
+            grid-area: form;
+            background-color: white;
+            margin: 50px;
+
+            .form-item {
+                padding-top: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: fit-content;
+
+                .text-area {
+                    outline: none;
+                    padding-top: 5px;
+                    border: 0;
+                    margin-bottom: 15px;
+                    border-bottom: 2px solid #bebed2
+                }
+
+                .input-area {
+                    padding-top: 5px;
+                    outline: none;
+                    height: 30px;
+                    border: 0;
+                    margin-bottom: 15px;
+                    border-bottom: 2px solid #bebed2
+                }
+
+                button {
+                    align-self: center;
+                    background: none;
+                    border: 0;
+                    border-radius: 5px;
+                    margin-top: 5px;
+                    padding: 5px;
+                    width: fit-content;
+                    font-size: larger;
+                    font-weight: bold;
+    
+                    &:hover {
+                        background-color: #e4e4ec;
+                    }
+    
+                    input {
+                        border: 0;
+                        background: none;
+                        
+                    }
+    
+                }
+            }
+        }
+
+        .table-item {
+            grid-area: table;
+            padding: 30px;
+            border-left: 1px solid #031926;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            min-width: 60vw;
+            thead {
+                tr {
+                    td {
+                        &:hover {
+                            background-color: #e8e8f0;
+                        }
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    &:hover {
+                        background-color: #e8e8f0;
+                    }
+
+                    td {
+                        button {
+                            border-radius: 3px;
+                            border-width: 0px;
+                            margin: 5px;
+                            .btn-editar{
+                                background-color: #bebed2;
+                                .popup{
+                                    position: relative;
+                                    display: inline-block;
+                                    cursor: pointer;
+                                }
+                            }
+                            .btn-eliminar{
+                                background-color: red;
+                            }
+                            a {
+                                border-radius: 3px;
+                                padding: 5px;
+                                text-decoration: none;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+
+                .td-size {
+                    min-width: fit-content;
+                    max-width: 200px;
+                }
+            }
+
+        }
+    }
+}

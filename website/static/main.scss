@@ -1,0 +1,58 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@import "header";
+@import "footer";
+
+@import "index";
+@import "person";
+@import "item";
+@import "login";
+@import "sign-up";
+@import "unathorized";
+@import "admin";
+@import "job";
+
+
+
+.error {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f7594e;
+  color: white;
+  max-width: auto;
+  max-height: fit-content;
+}
+
+.success {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #289911;
+  color: white;
+  max-width: auto;
+  max-height: fit-content;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}

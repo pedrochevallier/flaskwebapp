@@ -1,0 +1,583 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navi {
+  grid-area: nav;
+  background-color: #031926;
+  height: 60px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navi a {
+  margin-left: 50px;
+}
+.navi a img {
+  padding-top: 3px;
+  height: 50px;
+  width: auto;
+  padding-left: 10px;
+}
+.navi div ul {
+  margin-right: 50px;
+  padding-right: 10px;
+  align-content: center;
+  margin-bottom: 0rem;
+  list-style-type: none;
+}
+.navi div ul li {
+  align-items: center;
+  align-content: center;
+}
+
+.nav-button, .current-button {
+  text-decoration: none;
+  background-color: #031926;
+  color: #f0f8ff;
+  padding: 5px;
+  border-radius: 3px;
+}
+.nav-button:hover, .current-button:hover {
+  background-color: #f0f8ff;
+  color: #031926;
+}
+
+.current-button {
+  background-color: #f0f8ff;
+  color: #031926;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 30px;
+  background-color: white;
+  color: white;
+  margin-top: auto;
+  overflow: hidden;
+}
+.footer p {
+  margin-left: 20px;
+}
+.footer .footer-button {
+  color: white;
+  text-decoration: none;
+}
+
+.main-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.main-body .index {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "nav nav nav" "form table table" "footer footer footer";
+  background-color: white;
+  color: black;
+  justify-items: center;
+  align-items: start;
+  align-content: center;
+}
+.main-body .index .form {
+  grid-area: form;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+.main-body .index .form .form-index {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 30px;
+  margin-top: 50px;
+}
+.main-body .index .form h3 {
+  margin-bottom: 10px;
+}
+.main-body .index .form p {
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 3px;
+  height: 25px;
+}
+.main-body .index .form input {
+  box-sizing: border-box;
+  background: none;
+  outline: none;
+  resize: none;
+  border: 0;
+  transition: all 0.3s;
+  border-bottom: 2px solid #bebed2;
+}
+.main-body .index .form button {
+  align-self: center;
+  background: none;
+  border: 0;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: larger;
+  font-weight: bold;
+}
+.main-body .index .form button:hover {
+  background-color: #e4e4ec;
+}
+.main-body .index .table-index {
+  grid-area: table;
+  padding: 30px;
+  border-left: 1px solid #031926;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  min-width: 60vw;
+}
+.main-body .index .table-index thead tr td:hover {
+  background-color: #e8e8f0;
+}
+.main-body .index .table-index tbody tr:hover {
+  background-color: #e8e8f0;
+}
+.main-body .index .table-index tbody tr td button {
+  border-radius: 3px;
+  border-width: 0px;
+  margin: 5px;
+}
+.main-body .index .table-index tbody tr td button .btn-editar {
+  background-color: #bebed2;
+}
+.main-body .index .table-index tbody tr td button .btn-eliminar {
+  background-color: red;
+}
+.main-body .index .table-index tbody tr td button a {
+  border-radius: 3px;
+  padding: 5px;
+  text-decoration: none;
+  color: white;
+}
+.main-body .index .table-index tbody .td-size {
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  max-width: 200px;
+}
+
+.main-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.main-body .person {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "nav" "card" "footer";
+  background-color: white;
+  color: black;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+.main-body .person .cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  grid-area: card;
+  margin-top: 50px;
+  border-radius: 10px;
+}
+.main-body .person .cards a {
+  text-decoration: none;
+  color: black;
+}
+.main-body .person .cards a .card {
+  min-width: 200px;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: black;
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.main-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.main-body .item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "nav nav nav" "form table table" "footer footer footer";
+  justify-items: center;
+  align-items: start;
+  align-content: center;
+}
+.main-body .item .form {
+  grid-area: form;
+  background-color: white;
+  margin: 50px;
+}
+.main-body .item .form .form-item {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.main-body .item .form .form-item .text-area {
+  outline: none;
+  padding-top: 5px;
+  border: 0;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #bebed2;
+}
+.main-body .item .form .form-item .input-area {
+  padding-top: 5px;
+  outline: none;
+  height: 30px;
+  border: 0;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #bebed2;
+}
+.main-body .item .form .form-item button {
+  align-self: center;
+  background: none;
+  border: 0;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: larger;
+  font-weight: bold;
+}
+.main-body .item .form .form-item button:hover {
+  background-color: #e4e4ec;
+}
+.main-body .item .form .form-item button input {
+  border: 0;
+  background: none;
+}
+.main-body .item .table-item {
+  grid-area: table;
+  padding: 30px;
+  border-left: 1px solid #031926;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  min-width: 60vw;
+}
+.main-body .item .table-item thead tr td:hover {
+  background-color: #e8e8f0;
+}
+.main-body .item .table-item tbody tr:hover {
+  background-color: #e8e8f0;
+}
+.main-body .item .table-item tbody tr td button {
+  border-radius: 3px;
+  border-width: 0px;
+  margin: 5px;
+}
+.main-body .item .table-item tbody tr td button .btn-editar {
+  background-color: #bebed2;
+}
+.main-body .item .table-item tbody tr td button .btn-editar .popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.main-body .item .table-item tbody tr td button .btn-eliminar {
+  background-color: red;
+}
+.main-body .item .table-item tbody tr td button a {
+  border-radius: 3px;
+  padding: 5px;
+  text-decoration: none;
+  color: white;
+}
+.main-body .item .table-item tbody .td-size {
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  max-width: 200px;
+}
+
+.main-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.main-body .login {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "nav" "login" "footer";
+  background-color: white;
+  color: black;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+.main-body .login .centered {
+  grid-area: login;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+}
+.main-body .login .centered form {
+  display: flex;
+  flex-direction: column;
+}
+.main-body .login .centered form h3 {
+  margin: 20px;
+  align-self: center;
+}
+.main-body .login .centered form p {
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+.main-body .login .centered form input {
+  box-sizing: border-box;
+  background: none;
+  outline: none;
+  resize: none;
+  border: 0;
+  transition: all 0.3s;
+  border-bottom: 2px solid #bebed2;
+}
+.main-body .login .centered form button {
+  align-self: center;
+  background: none;
+  border: 0;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: larger;
+  font-weight: bold;
+}
+.main-body .login .centered form button:hover {
+  background-color: #e4e4ec;
+}
+.main-body .login .centered div {
+  padding-top: 5px;
+}
+.main-body .login .centered div a {
+  text-decoration: none;
+  color: #2a53c5;
+  margin-top: 5px;
+}
+.main-body .login .centered .forgot-pass {
+  margin-top: 5px;
+  text-decoration: none;
+  color: #2a53c5;
+}
+
+.main-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.main-body .signup {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "nav" "signup" "footer";
+  background-color: white;
+  color: black;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+.main-body .signup .centered {
+  grid-area: signup;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+}
+
+.main-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.main-body .unathorized {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "nav" "unathorized" "footer";
+  background-color: white;
+  color: black;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+.main-body .unathorized .unatho {
+  grid-area: unathorized;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.main-body .unathorized .unatho button {
+  margin-top: 15px;
+  border: none;
+  background-color: white;
+  color: white;
+}
+.main-body .unathorized .unatho button a {
+  text-decoration: none;
+  color: black;
+}
+
+.main-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.main-body .admin {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "nav nav" "table1 table2" "footer footer";
+  background-color: white;
+  color: black;
+  justify-items: center;
+  align-items: start;
+  align-content: center;
+}
+.main-body .admin .table-admin1 {
+  grid-area: table1;
+}
+.main-body .admin .table-admin1 tbody tr td .btn-eliminar {
+  border-radius: 3px;
+  border-width: 0px;
+  margin: 5px;
+  background-color: red;
+}
+.main-body .admin .table-admin1 tbody tr td .btn-eliminar a {
+  border-radius: 3px;
+  padding: 5px;
+  text-decoration: none;
+  color: white;
+}
+.main-body .admin .table-admin2 {
+  grid-area: table2;
+}
+
+.main-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.main-body .job {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "nav" "upload" "footer";
+  background-color: white;
+  color: black;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+.main-body .job div form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+.main-body .job div form .file-upload {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.main-body .job div form .btn-upload {
+  background-color: forestgreen;
+  border: none;
+  border-radius: 5px;
+  height: 35px;
+}
+.main-body .job div form .btn-upload:hover {
+  background-color: #e4e4ec;
+}
+.main-body .job div button {
+  border-radius: 3px;
+  border-width: 0px;
+  margin: 5px;
+}
+.main-body .job div button .btn-edit {
+  background-color: #bebed2;
+}
+.main-body .job div button .btn-eliminar {
+  background-color: red;
+}
+.main-body .job div button a {
+  border-radius: 3px;
+  padding: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f7594e;
+  color: white;
+  max-width: auto;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
+
+.success {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #289911;
+  color: white;
+  max-width: auto;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,44 @@
+.main-body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .admin{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "nav nav"
+            "table1 table2"
+            "footer footer";
+        background-color: white;
+        color: black;
+        justify-items: center;
+        align-items: start;
+        align-content: center;
+
+        .table-admin1{
+            grid-area: table1;
+            tbody{
+                tr{
+                    td{
+                        .btn-eliminar {
+                            border-radius: 3px;
+                            border-width: 0px;
+                            margin: 5px;
+                            background-color: red;
+                            a{
+                                border-radius: 3px;
+                                padding: 5px;
+                                text-decoration: none;
+                                color: white;
+                            }
+                          }
+                    }
+                }
+            }
+        }
+        .table-admin2{
+            grid-area: table2;
+        }
+    }
+}

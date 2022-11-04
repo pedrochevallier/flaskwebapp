@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="card card-body">
+      <form action="/update/{{person.id}}" method="POST">
+
+        <div class="form-group">
+          <label for="nombre">Name</label>
+          <input id="name" type="text" name="name" value="{{person.first_name}}" class="form-control" required/>
+        </div>
+
+        <div class="form-group">
+          <label for="last_name">Last name</label>
+          <input id="last_name" type="text" name="last_name" value="{{person.last_name}}" class="form-control" required/>
+        </div>
+
+        <div class="form-group">
+          <label for="uniqueID">uniqueID</label>
+          <input id="uniqueID" type="text" name="uniqueID" value="{{person.uniqueID}}" class="form-control" required/>
+        </div>
+
+
+        <div class="form-group">
+          <label for="nationality">nationality</label>
+            <input id="nationality" type="text" class="form-control" name="nationality" value="{{page_1.nationality}}">
+          </div>
+
+          <div class="form-group">
+            <label for="address">address</label>
+            <input id="address" type="text" class="form-control" name="address" value="{{page_1.address}}">
+          </div>
+
+          <div class="form-group">
+            <label for="b_day">Date of Birth</label>
+            <input id="b_day" type="date" class="form-control" name="b_day" value="{{page_1.b_day}}">
+          </div>
+
+          <div class="form-group">
+            <label for="civil_status">Civil Status</label>
+            <input id="civil_status" type="text" class="form-control" name="civil_status" value="{{page_1.civil_status}}">
+          </div>
+
+          <div class="form-group">
+            <label for="education">Education</label>
+            <input id="education" type="text" class="form-control" name="education" value="{{page_1.education}}">
+          </div>
+
+          <div class="form-group">
+            <label for="profession">Profession</label>
+            <textarea id="profession" name="profession" class="form-control" >{{page_1.profession}}</textarea>
+          </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block">
+            Update
+          </button>
+        </div>
+      </form>
+    </div>
+
+{% endblock %}

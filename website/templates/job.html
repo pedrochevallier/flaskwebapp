@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs</title>
+
+    <link rel="stylesheet" href="../static/main.css">
+    <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/28aaae96af.js" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+        id="bootstrap-css">
+
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+
+</head>
+
+<body class="main-body">
+    <header class="navi">
+        <a href="/"><img class="nav-img" src="#" alt=""></a>
+        <div>
+            <ul>
+                <li>
+                    <a class="nav-button" href="/">Home</a>
+                    <a class="nav-button" href="/logout">Logout</a>
+                </li>
+            </ul>
+          </div>
+    </header>
+
+    <main class="job">
+    
+        <div>
+            <h3>{{person.first_name}} {{person.last_name}}</h3>
+            <form action="/job/{{id}}" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" class="file-upload">
+                <button class="btn-upload">
+                    <i class="fa-solid fa-cloud-arrow-up fa-2xl"></i>
+                </button>
+            </form>
+        </div>
+        <div>
+            <table id="job" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Date</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cv in loaded %}
+                    <tr>
+                        <td width="400px">{{cv.name}}</td>
+                        <td width="150px">{{cv.fecha}}</td>
+                        <td width="220">
+                            <button>
+                                <a href="/download/{{cv.name}}" class="btn-edit" target="_blank">Download</a>
+                            </button>
+                            <button>
+                                <a href="/delete/job/{{cv.id}}" class="btn-delete btn-eliminar">Delete</a>
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <a class="footer-button" href="#"><p></p></a>
+    </footer>
+    
+
+    <script>
+        const btnDelete = document.querySelectorAll('.btn-delete');
+        if (btnDelete) {
+            const btnArray = Array.from(btnDelete);
+            btnArray.forEach((btn) => {
+                btn.addEventListener('click', (e) => {
+                    if (!confirm('Are you sure you want to delete it?')) {
+                        e.preventDefault();
+                    }
+                });
+            })
+        }
+
+        $(document).ready(function () {
+            $('#job').DataTable({
+                "aLengthMenu": [[3, 5, 8], [3, 5, 8]],
+                "pageLength": 5
+            }
+            );
+        });
+    </script>
+</body>
+</html>

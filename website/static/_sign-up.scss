@@ -1,0 +1,27 @@
+.main-body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .signup {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "nav"
+            "signup"
+            "footer";
+        background-color: white;
+        color: black;
+        justify-items: center;
+        align-items: center;
+        align-content: center;
+        .centered {
+            grid-area: signup;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -70%);
+        }
+    }
+}

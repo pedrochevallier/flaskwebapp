@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="../static/main.css">
+    <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/28aaae96af.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body class="main-body">
+    <header class="navi">
+        <a href="/"><img class="nav-img" src="#" alt=""></a>
+        <div>
+            <ul>
+                <li>
+                    <a class="nav-button" href="/">Home</a>
+                    <a class="nav-button" href="/logout">Logout</a>
+                </li>
+            </ul>
+          </div>
+        
+    </header>
+
+    <main class="person">
+        <div class="cards">
+            <a href="/items/{{person.id}}">
+                <h3 class="card"><i class="fa-solid fa-shirt"></i> Items</h3>
+            </a>
+            <a href="/edit/{{person.id}}">
+                <h3 class="card"><i class="fa-solid fa-user-group"></i> Social Services</h3>
+            </a>
+            <a href="/job/{{person.id}}">
+                <h3 class="card"><i class="fa-solid fa-address-card"></i> Jobs</h3>
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <a class="footer-button" href="#"><p></p></a>
+    </footer>
+</body>
+</html>

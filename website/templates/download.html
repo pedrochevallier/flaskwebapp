@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job</title>
+
+    <link rel="stylesheet" href="../static/main.css">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/28aaae96af.js" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+        id="bootstrap-css">
+
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+
+</head>
+
+<body class="main-body">
+    <header class="navi">
+        <a href="/"><img class="nav-img" src="#" alt=""></a>
+    </header>
+
+    <main class="job">
+        <div class="table-job">
+            <table id="job" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Date</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cv in loaded %}
+                    <tr>
+                        <td width="400px">{{cv.name}}</td>
+                        <td width="150px">{{cv.date}}</td>
+                        <td width="60">
+                            <button>
+                                <a href="/download/{{cv.name}}" class="btn-edit" target="_blank">Download</a>
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <a class="footer-button" href="#"><p></p></a>
+    </footer>
+    
+
+    <script>
+        
+        $(document).ready(function () {
+            $('#empleo').DataTable({
+                "aLengthMenu": [[3, 5, 8], [3, 5, 8]],
+                "pageLength": 5
+            }
+            );
+        });
+    </script>
+</body>
+</html>

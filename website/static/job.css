@@ -1,0 +1,55 @@
+.main-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.main-body .job {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "nav" "upload" "footer";
+  background-color: white;
+  color: black;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+.main-body .job div form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+.main-body .job div form .file-upload {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.main-body .job div form .btn-upload {
+  background-color: forestgreen;
+  border: none;
+  border-radius: 5px;
+  height: 35px;
+}
+.main-body .job div form .btn-upload:hover {
+  background-color: #e4e4ec;
+}
+.main-body .job div button {
+  border-radius: 3px;
+  border-width: 0px;
+  margin: 5px;
+}
+.main-body .job div button .btn-edit {
+  background-color: #bebed2;
+}
+.main-body .job div button .btn-eliminar {
+  background-color: red;
+}
+.main-body .job div button a {
+  border-radius: 3px;
+  padding: 5px;
+  text-decoration: none;
+  color: white;
+}/*# sourceMappingURL=job.css.map */

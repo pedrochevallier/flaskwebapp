@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Title</title>
+
+  <link rel="stylesheet" href="../static/main.css">
+  <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+    id="bootstrap-css">
+
+  <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+
+
+</head>
+
+<body class="main-body">
+  <header class="navi">
+    <a href="/"><img class="nav-img" src="#" alt=""></a>
+    <div>
+      <ul>
+        <li>
+
+          <a class="nav-button" href="/">Home</a>
+          {% if current_user.id == 1 %}
+          <a class="nav-button" href="/admin">Admin Panel</a>
+          {% endif %}
+          <a class="nav-button" href="/logout">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="index">
+    <div class="form">
+      <form class="form-index" action="{{url_for('views.addperson')}}" method="POST">
+        <h3>Add person</h3>
+        <p>Name</p>
+        <input type="text" name="fname" autocomplete="off" required>
+        <p>Last name</p>
+        <input type="text" name="lname" autocomplete="off" required>
+        <p>uniqueID</p>
+        <input type="text" name="uniqueID" autocomplete="off" required>
+        <button>
+          Next
+        </button>
+      </form>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for categories, message in messages %}
+            <div class="{{ categories }}">
+                {{ message }}
+                <button class="closebtn">
+                    <i class="close icon" onclick=delete_flash(this)>x</i>
+                </button>
+            </div>
+            {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+    </div>
+    <div class="table-index">
+      <table id="index" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Last name</td>
+            <td>uniqueID</td>
+            <td width="150">Last time</td>
+            <td width="180">Action</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for person in query %}
+          <tr>
+            <td>{{person.id}}</td>
+            <td>{{person.first_name}}</td>
+            <td>{{person.last_name}}</td>
+            <td>{{person.uniqueID}}</td>
+            <td>{{person.date}}</td>
+            <td class="td-size">
+              <button>
+                <a href="/person/{{person.id}}" class="btn-edit" target="_blank">Edit</a>
+              </button>
+              {% if current_user.id == 1 %}
+              <button>
+                <a href="/delete/{{person.id}}" class="btn-delete btn-eliminar">Delete</a>
+              </button>
+              {% endif %}
+
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a class="footer-button" href="#">
+      <p></p>
+    </a>
+  </footer>
+
+  <script>
+    const btnDelete = document.querySelectorAll('.btn-delete');
+    if (btnDelete) {
+      const btnArray = Array.from(btnDelete);
+      btnArray.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          if (!confirm('Are you sure you want to delete it?')) {
+            e.preventDefault();
+          }
+        });
+      })
+    }
+
+    $(document).ready(function () {
+      $('#index').DataTable({
+        "aLengthMenu": [[3, 5, 8], [3, 5, 8]],
+        pagingType: 'simple',
+        "pageLength": 5
+      }
+      );
+    });
+
+    function delete_flash(flash) {
+            $(flash).parent().parent().remove()
+        }
+  </script>
+</body>
+
+</html>

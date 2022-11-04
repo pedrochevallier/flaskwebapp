@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+
+    <link rel="stylesheet" href="../static/main.css">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+        id="bootstrap-css">
+
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+
+
+</head>
+
+<body class="main-body">
+    <header class="navi">
+        <a href="/"><img class="nav-img" src="#" alt=""></a>
+        <div>
+            <ul>
+                <li>
+                    <a class="nav-button" href="/">Home</a>
+                    <a class="nav-button" href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="admin">
+        <div class="table-admin1">
+            <table id="admin1" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Email</td>
+                        <td>Name</td>
+                        <td width="180">Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td>{{user.id}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.first_name}}</td>
+                        <td class="td-size">
+                            {% if user.id != 1 %}
+                            <button class="btn-eliminar">
+                                <a href="/deleteuser/{{user.id}}">Delete</a>
+                            </button>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="table-admin2">
+            <table id="admin2" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Email</td>
+                        <td>Name</td>
+                        <td width="180">Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for pendings in pending %}
+                    <tr>
+                        <td>{{pendings.id}}</td>
+                        <td>{{pendings.email}}</td>
+                        <td>{{pendings.first_name}}</td>
+                        <td class="td-size">
+                            <button>
+                                <a class="btn-authorize" href="/authuser/{{pendings.id}}">Authorize</a>
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <a class="footer-button" href="#">
+            <p></p>
+        </a>
+    </footer>
+
+    <script>
+        
+
+        const btnDelete = document.querySelectorAll('.btn-delete');
+        if (btnDelete) {
+            const btnArray = Array.from(btnDelete);
+            btnArray.forEach((btn) => {
+                btn.addEventListener('click', (e) => {
+                    if (!confirm('Are you sure you want to delete it?')) {
+                        e.preventDefault();
+                    }
+                });
+            })
+        }
+
+        $(document).ready(function () {
+            $('#admin1').DataTable({
+                "aLengthMenu": [[3, 5, 8], [3, 5, 8]],
+                "pageLength": 5
+            }
+            );
+        });
+        $(document).ready(function () {
+            $('#admin2').DataTable({
+                "aLengthMenu": [[3, 5, 8], [3, 5, 8]],
+                "pageLength": 5
+            }
+            );
+        });
+
+    </script>
+</body>
+
+</html>
