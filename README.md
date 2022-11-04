@@ -16,7 +16,7 @@ Change the folder path in the init file otherwise file upload will not work
 To create virtual environment run the following command in the proyect's root folder
 
 ```bash
-python3 -m venv webappvenv
+python3 -m venv venv
 ```
 To activate the virtual environment
 
