@@ -21,7 +21,7 @@ python3 -m venv venv
 To activate the virtual environment
 
 ```bash
-source webappvenv/bin/activate
+source venv/bin/activate
 ```
 To install dependencies run
 ```bash
