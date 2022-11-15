@@ -1,8 +1,8 @@
 
 # Flask webapp
 
-Crude flask app design to keep control of items given to people in vulnerable situation.
-It also lets the social worker upload a resume that is available for download with a personal ID
+Basic flask app design to keep control of items given to people.
+It also lets you upload a resume that is available for download with a personal ID
 
 
 
